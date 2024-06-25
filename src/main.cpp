@@ -15,6 +15,7 @@ int main(int, char**)
     if (!glfwInit())
         return 1;
 
+
     // Create window with graphics context
     GLFWwindow* window = glfwCreateWindow(1280, 720, "hello world", nullptr, nullptr);
     if (window == nullptr)
@@ -58,6 +59,9 @@ int main(int, char**)
             }
             if (ImGui::Button("remove")) {
                 avl::remove(key, avl::root);
+            }
+            if (ImGui::Button("search")) {
+                avl::search(key, avl::root);
             }
             avl::dfs(avl::root, {winPos.x + 600, winPos.y + 200}); 
         }
