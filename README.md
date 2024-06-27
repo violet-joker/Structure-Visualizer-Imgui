@@ -16,15 +16,15 @@ imgui文件未给出，详细查看[imgui官网](https://github.com/ocornut/imgu
 
 已实现：
 
-- dfs遍历avl树渲染节点
+- dfs遍历avl树渲染
 
 - avl树的节点插入操作
 
 - avl树的节点删除操作
 
-待实现：
+- avl树的节点查询操作
 
-- 节点查询可视化
+待实现：
 
 - 前驱、后继、排名查询
 
@@ -33,3 +33,5 @@ imgui文件未给出，详细查看[imgui官网](https://github.com/ocornut/imgu
 待优化：
 
 - 节点水平距离计算
+
+- 以计数的方式存储相同值节点
