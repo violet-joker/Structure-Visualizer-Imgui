@@ -50,19 +50,37 @@ int main(int, char**)
 
         // 渲染avl树
         if (ImGui::Begin("avl tree")) {
+            // 设置字体大小
             ImGui::SetWindowFontScale(2.0f);
+            // 获取窗口位置，用于后续树节点的定位
             ImVec2 winPos = ImGui::GetWindowPos();
             ImGui::Text("window pos: (%.2f, %.2f)", winPos.x, winPos.y);
+            // 数据输入框，以及对应操作按钮
+            ImGui::SetNextItemWidth(200.0f);
             ImGui::InputInt("input integer", &key);
+            // 按下↑↓键
+            if (ImGui::IsKeyPressed(ImGuiKey_RightArrow)) {
+                key++;
+            }
+            if (ImGui::IsKeyPressed(ImGuiKey_LeftArrow)) {
+                key--;
+            }
+            // 插入
             if (ImGui::Button("insert")) {
                 avl::add(key, avl::root);
             }
+            // 删除
+            ImGui::SameLine();
             if (ImGui::Button("remove")) {
                 avl::remove(key, avl::root);
             }
+            // 查询
+            ImGui::SameLine();
             if (ImGui::Button("search")) {
                 avl::search(key, avl::root);
             }
+            // 阻止Imgui处理其他焦点操作，防止↑↓键影响组件聚焦切换
+            ImGui::SetKeyboardFocusHere();
             avl::dfs(avl::root, {winPos.x + 600, winPos.y + 200}); 
         }
         ImGui::End();
