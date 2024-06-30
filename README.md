@@ -24,6 +24,8 @@ imgui文件未给出，详细查看[imgui官网](https://github.com/ocornut/imgu
 
 - avl树的节点查询操作
 
+- 计数统计
+
 待实现：
 
 - 前驱、后继、排名查询
@@ -34,4 +36,3 @@ imgui文件未给出，详细查看[imgui官网](https://github.com/ocornut/imgu
 
 - 节点水平距离计算
 
-- 以计数的方式存储相同值节点
